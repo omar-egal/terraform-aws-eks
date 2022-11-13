@@ -14,3 +14,7 @@ module "security" {
   vpc_id          = module.networking.vpc_id
   security_groups = local.security_groups
 }
+
+module "eks" {
+  source = "./eks"
+}
