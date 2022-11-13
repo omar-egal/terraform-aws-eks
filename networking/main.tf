@@ -17,7 +17,7 @@ resource "aws_vpc" "custom_vpc" {
   cidr_block = var.vpc_cidr
 
   tags = {
-    Name = "week22-vpc-${random_integer.random.id}"
+    Name = "week22-data-plane-vpc-${random_integer.random.id}"
   }
   lifecycle {
     create_before_destroy = true
