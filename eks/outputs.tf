@@ -1,0 +1,1 @@
+#---eks/outputs.tf---
