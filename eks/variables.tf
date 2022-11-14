@@ -6,4 +6,12 @@ variable "AmazonEKSClusterPolicy" {}
 
 variable "AmazonEKSVPCResourceController" {}
 
-variable "role_arn" {}
+variable "cluster_role_arn" {}
+
+variable "node_role_arn" {}
+
+variable "AmazonEKSWorkerNodePolicy" {}
+
+variable "AmazonEKS_CNI_Policy" {}
+
+variable "AmazonEC2ContainerRegistryReadOnly" {}
