@@ -16,5 +16,10 @@ module "security" {
 }
 
 module "eks" {
-  source = "./eks"
+  source                         = "./eks"
+  public_subnets                 = module.networking.public_subnets
+  AmazonEKSClusterPolicy         = module.security.AmazonEKSClusterPolicy
+  AmazonEKSVPCResourceController = module.security.AmazonEKSVPCResourceController
+  role_arn                       = module.security.role_arn
+
 }
