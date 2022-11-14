@@ -16,10 +16,13 @@ module "security" {
 }
 
 module "eks" {
-  source                         = "./eks"
-  public_subnets                 = module.networking.public_subnets
-  AmazonEKSClusterPolicy         = module.security.AmazonEKSClusterPolicy
-  AmazonEKSVPCResourceController = module.security.AmazonEKSVPCResourceController
-  role_arn                       = module.security.role_arn
-
+  source                             = "./eks"
+  public_subnets                     = module.networking.public_subnets
+  AmazonEKSClusterPolicy             = module.security.AmazonEKSClusterPolicy
+  AmazonEKSVPCResourceController     = module.security.AmazonEKSVPCResourceController
+  cluster_role_arn                   = module.security.cluster_role_arn
+  node_role_arn                      = module.security.node_role_arn
+  AmazonEKSWorkerNodePolicy          = module.security.AmazonEKSWorkerNodePolicy
+  AmazonEKS_CNI_Policy               = module.security.AmazonEKS_CNI_Policy
+  AmazonEC2ContainerRegistryReadOnly = module.security.AmazonEC2ContainerRegistryReadOnly
 }
