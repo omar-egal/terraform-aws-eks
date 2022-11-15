@@ -1,11 +1,15 @@
 #---security/outputs.tf---
 
+output "security_group_ids" {
+  value = aws_security_group.week22_sg.*.id
+}
+
 output "cluster_role_arn" {
   value = aws_iam_role.cluster_role.arn
 }
 
 output "node_role_arn" {
-    value = aws_iam_role.node_role.arn
+  value = aws_iam_role.node_role.arn
 }
 
 output "AmazonEKSClusterPolicy" {

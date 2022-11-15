@@ -17,7 +17,7 @@ module "security" {
 
 module "eks" {
   source                             = "./eks"
-  cluster_name = "eks-cluster-${substr(uuid(), 0, 5)}"
+  cluster_name                       = "eks-cluster-${substr(uuid(), 0, 5)}"
   public_subnets                     = module.networking.public_subnets
   AmazonEKSClusterPolicy             = module.security.AmazonEKSClusterPolicy
   AmazonEKSVPCResourceController     = module.security.AmazonEKSVPCResourceController
@@ -26,4 +26,8 @@ module "eks" {
   AmazonEKSWorkerNodePolicy          = module.security.AmazonEKSWorkerNodePolicy
   AmazonEKS_CNI_Policy               = module.security.AmazonEKS_CNI_Policy
   AmazonEC2ContainerRegistryReadOnly = module.security.AmazonEC2ContainerRegistryReadOnly
+  security_group_ids                 = module.security.security_group_ids
+  sc_desired_size                    = 1
+  sc_max_size                        = 1
+  sc_min_size                        = 1
 }
