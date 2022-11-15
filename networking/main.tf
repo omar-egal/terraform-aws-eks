@@ -2,7 +2,7 @@
 
 # Declare the data source
 data "aws_availability_zones" "available" {
-  exclude_zone_ids = ["us-east-1e"]
+  exclude_names = ["us-east-1e"]
 }
 
 resource "random_integer" "random" {
