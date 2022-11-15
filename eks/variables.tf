@@ -1,5 +1,7 @@
 #---eks/variables.tf---
 
+variable "cluster_name" {}  
+
 variable "public_subnets" {}
 
 variable "AmazonEKSClusterPolicy" {}

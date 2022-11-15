@@ -17,6 +17,7 @@ module "security" {
 
 module "eks" {
   source                             = "./eks"
+  cluster_name = "eks-cluster-${substr(uuid(), 0, 5)}"
   public_subnets                     = module.networking.public_subnets
   AmazonEKSClusterPolicy             = module.security.AmazonEKSClusterPolicy
   AmazonEKSVPCResourceController     = module.security.AmazonEKSVPCResourceController
