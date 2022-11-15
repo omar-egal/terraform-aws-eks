@@ -26,7 +26,7 @@ module "eks" {
   AmazonEKSWorkerNodePolicy          = module.security.AmazonEKSWorkerNodePolicy
   AmazonEKS_CNI_Policy               = module.security.AmazonEKS_CNI_Policy
   AmazonEC2ContainerRegistryReadOnly = module.security.AmazonEC2ContainerRegistryReadOnly
-  security_group_ids                 = module.security.security_group_ids
+  security_group_ids                 = module.security.security_group_id
   sc_desired_size                    = 1
   sc_max_size                        = 1
   sc_min_size                        = 1
