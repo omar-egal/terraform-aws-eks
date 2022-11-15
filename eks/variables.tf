@@ -27,3 +27,7 @@ variable "sc_desired_size" {}
 variable "sc_max_size" {}
 
 variable "sc_min_size" {}
+
+variable "instance_types" {}
+
+variable "capacity_type" {}
