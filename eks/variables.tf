@@ -2,6 +2,8 @@
 
 variable "cluster_name" {}
 
+variable "node_group_name" {}
+
 variable "public_subnets" {}
 
 variable "security_group_ids" {}

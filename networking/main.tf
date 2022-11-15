@@ -1,7 +1,9 @@
 #---networking/main.tf---
 
 # Declare the data source
-data "aws_availability_zones" "available" {}
+data "aws_availability_zones" "available" {
+  exclude_zone_ids = ["us-east-1e"]
+}
 
 resource "random_integer" "random" {
   min = 1
