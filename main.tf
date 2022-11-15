@@ -31,4 +31,6 @@ module "eks" {
   sc_desired_size                    = 1
   sc_max_size                        = 1
   sc_min_size                        = 1
+  instance_types                     = ["t2.micro"]
+  capacity_type                      = "SPOT"
 }
