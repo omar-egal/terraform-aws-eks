@@ -9,5 +9,4 @@ variable "secret_key" {}
 
 variable "access_ip" {
   sensitive = true
-  
 }

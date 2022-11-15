@@ -1,8 +1,10 @@
 #---eks/variables.tf---
 
-variable "cluster_name" {}  
+variable "cluster_name" {}
 
 variable "public_subnets" {}
+
+variable "security_group_ids" {}
 
 variable "AmazonEKSClusterPolicy" {}
 
@@ -17,3 +19,9 @@ variable "AmazonEKSWorkerNodePolicy" {}
 variable "AmazonEKS_CNI_Policy" {}
 
 variable "AmazonEC2ContainerRegistryReadOnly" {}
+
+variable "sc_desired_size" {}
+
+variable "sc_max_size" {}
+
+variable "sc_min_size" {}
