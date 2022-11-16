@@ -38,7 +38,7 @@ resource "aws_subnet" "week22_public_subnet" {
   count                   = var.public_sn_count
   vpc_id                  = aws_vpc.custom_vpc.id
   cidr_block              = var.public_cidrs[count.index]
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = var.map_public_ip_on_launch
   availability_zone       = random_shuffle.az_list.result[count.index]
 
   tags = {
