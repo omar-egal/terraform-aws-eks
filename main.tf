@@ -19,6 +19,7 @@ module "eks" {
   source                             = "./eks"
   cluster_name                       = "eks-cluster-${substr(uuid(), 0, 5)}"
   node_group_name                    = "week22-node-group"
+  endpoint_public_access             = true
   public_subnets                     = module.networking.public_subnets
   AmazonEKSClusterPolicy             = module.security.AmazonEKSClusterPolicy
   AmazonEKSVPCResourceController     = module.security.AmazonEKSVPCResourceController
@@ -31,6 +32,7 @@ module "eks" {
   sc_desired_size                    = 1
   sc_max_size                        = 1
   sc_min_size                        = 1
+  max_unavailable                    = 1
   instance_types                     = ["t2.micro"]
   capacity_type                      = "SPOT"
 }

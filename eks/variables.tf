@@ -31,3 +31,7 @@ variable "sc_min_size" {}
 variable "instance_types" {}
 
 variable "capacity_type" {}
+
+variable "endpoint_public_access" {}
+
+variable "max_unavailable" {}
