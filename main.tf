@@ -1,12 +1,13 @@
 #---root/main.tf---
 
 module "networking" {
-  source          = "./networking"
-  vpc_cidr        = local.vpc_cidr
-  public_cidrs    = [for i in range(2, 255, 2) : cidrsubnet(local.vpc_cidr, 8, i)]
-  access_ip       = var.access_ip
-  public_sn_count = 2
-  max_subnets     = 20
+  source                  = "./networking"
+  vpc_cidr                = local.vpc_cidr
+  public_cidrs            = [for i in range(2, 255, 2) : cidrsubnet(local.vpc_cidr, 8, i)]
+  map_public_ip_on_launch = true
+  access_ip               = var.access_ip
+  public_sn_count         = 2
+  max_subnets             = 20
 }
 
 module "security" {
@@ -32,7 +33,6 @@ module "eks" {
   sc_desired_size                    = 1
   sc_max_size                        = 1
   sc_min_size                        = 1
-  max_unavailable                    = 1
   instance_types                     = ["t2.micro"]
   capacity_type                      = "SPOT"
 }

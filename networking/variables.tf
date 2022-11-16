@@ -17,3 +17,5 @@ variable "public_sn_count" {
 variable "max_subnets" {
   type = number
 }
+
+variable "map_public_ip_on_launch" {}
