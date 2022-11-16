@@ -5,8 +5,9 @@ resource "aws_eks_cluster" "cluster" {
   role_arn = var.cluster_role_arn
 
   vpc_config {
-    subnet_ids         = var.public_subnets
-    security_group_ids = var.security_group_ids
+    subnet_ids             = var.public_subnets
+    security_group_ids     = var.security_group_ids
+    endpoint_public_access = var.endpoint_public_access
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
@@ -32,7 +33,7 @@ resource "aws_eks_node_group" "node_group" {
   }
 
   update_config {
-    max_unavailable = 1
+    max_unavailable = var.max_unavailable
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Node Group handling.
