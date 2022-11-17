@@ -18,7 +18,7 @@ module "security" {
 
 module "eks" {
   source                             = "./eks"
-  cluster_name                       = "eks-cluster-${substr(uuid(), 0, 5)}"
+  cluster_name                       = "${local.cluster_name}${substr(uuid(), 0, 5)}"
   node_group_name                    = "week22-node-group"
   endpoint_public_access             = true
   public_subnets                     = module.networking.public_subnets

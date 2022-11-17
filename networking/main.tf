@@ -42,7 +42,7 @@ resource "aws_subnet" "week22_public_subnet" {
   availability_zone       = random_shuffle.az_list.result[count.index]
 
   tags = {
-    Name = "week22-public-${count.index + 1}"
+    "kubernetes.io/cluster/week22-public-${count.index + 1}" = "shared"
   }
 }
 

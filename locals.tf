@@ -3,6 +3,10 @@ locals {
 }
 
 locals {
+  cluster_name = "eks-cluster-"
+}
+
+locals {
   security_groups = {
     public = {
       name        = "public_sg"
