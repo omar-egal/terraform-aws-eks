@@ -1,1 +1,1 @@
-access_ip = "0.0.0.0/0"
+access_ip = "0.0.0.0/0" #Change to a specific IP address or range of addresses
