@@ -60,3 +60,11 @@ resource "aws_route" "default_route" {
   gateway_id             = aws_internet_gateway.week22_internet_gateway.id
 }
 
+
+resource "aws_route_table_association" "public_rt_association" {
+  count          = var.public_sn_count
+  subnet_id      = aws_subnet.week22_public_subnet[count.index].id
+  route_table_id = aws_route_table.week22_public_rt.id
+}
+
+

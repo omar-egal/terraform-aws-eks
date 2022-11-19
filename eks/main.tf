@@ -31,7 +31,7 @@ resource "aws_eks_node_group" "node_group" {
     max_size     = var.sc_max_size
     min_size     = var.sc_min_size
   }
-  
+
   tags = {
     "kubernetes.io/cluster/${aws_eks_cluster.cluster.name}" = "owned"
   }
