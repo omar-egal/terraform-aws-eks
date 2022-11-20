@@ -1,5 +1,6 @@
 #---eks/main.tf---
 
+# EKS Cluster resource
 resource "aws_eks_cluster" "cluster" {
   name     = var.cluster_name
   role_arn = var.cluster_role_arn
@@ -18,6 +19,7 @@ resource "aws_eks_cluster" "cluster" {
   ]
 }
 
+# EKS Node Group resource
 resource "aws_eks_node_group" "node_group" {
   cluster_name    = aws_eks_cluster.cluster.name
   node_group_name = var.node_group_name
