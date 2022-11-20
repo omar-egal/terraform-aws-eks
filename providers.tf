@@ -15,7 +15,7 @@ terraform {
 
 provider "kubernetes" {
   cluster_ca_certificate = base64decode(module.eks.kubeconfig-certificate-authority-data)
-  host                   = module.eks.endpoint
+  host                   = data.aws_eks_cluster.cluster.endpoint
   token                  = data.aws_eks_cluster_auth.cluster.token
 }
 
