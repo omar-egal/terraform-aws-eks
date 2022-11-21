@@ -32,7 +32,7 @@ module "eks" {
   security_group_ids                 = module.security.security_group_id
   sc_desired_size                    = 4
   sc_max_size                        = 4
-  sc_min_size                        = 2
+  sc_min_size                        = 4
   instance_types                     = ["t3.small"]
   capacity_type                      = "SPOT"
 }
